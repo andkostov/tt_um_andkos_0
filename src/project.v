@@ -30,8 +30,8 @@ module tt_um_vga_example_directional_toggle(
   assign uo_out = {hsync, B[0], G[0], R[0], vsync, B[1], G[1], R[1]};
 
   // Unused outputs assigned to 0.
-  assign uio_out = 0;
-  assign uio_oe  = 0;
+  assign uio_out = counter[7:0];
+  assign uio_oe  = 8'hFF;
 
   // Suppress unused signals warning
   wire _unused_ok = &{ena, ui_in, uio_in};
